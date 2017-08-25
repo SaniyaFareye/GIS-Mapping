@@ -1,0 +1,55 @@
+<div class="add process flow" >
+    <div class="bg-extended">
+        <div class="align-vertical-center">
+
+            <div class="container">
+
+
+
+                <div class="well  col-sm-12">
+
+                    <div class="well-heading well-primary">
+                        <h1>Location Category</h1>
+                    </div>
+
+                    <form name="category_form" class="well-body form-horizontal">
+
+
+
+                        <div class="  form-group ">
+                            <label  class="control-label col-sm-3"for="location">Location Category*</label>
+                            <div class="col-sm-8">
+                                <input name="location_category" id="location" type="text" class="form-control" ng-model="category.categoryName" required="required" placeholder="Enter location category"/>
+                            </div>
+
+                            <!--<div ng-show="category_form.$submitted || category_form.location_category.$touched">-->
+                                <!--<div ng-show="category_form.location_category.$error.required">Please enter username.</div>-->
+                            <!--</div>-->
+
+                            <!--<div ng-show="category_form.$submitted || category_form.location_category.$touched">-->
+                                <!--<div ng-show="category_form.location_category.$error.required">Please enter location category.</div>-->
+                            <!--</div>-->
+                        </div>
+
+
+
+
+
+                        <br/>
+                        <br/>
+
+                        <div class="col-sm-offset-3 col-sm-8">
+                            <button class="btn btn-lg btn-primary " ng-click="addCategory(category)" >
+                                Add Category
+                            </button>
+
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

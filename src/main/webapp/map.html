@@ -1,0 +1,116 @@
+<div   ng-init="show='view'">
+    <div class="btn-group" role="group" >
+        <button ng-click="show='view'" type="button" class="btn btn-default">View Locations</button>
+        <button ng-click="show='add'" type="button" class="btn btn-default">Add Location</button>
+    </div>
+<div style="height: 400px;"id="mapid"></div>
+
+<div class="add map location" ng-if="show=='add'">
+    <div class="bg-extended">
+        <div class="align-vertical-center">
+
+            <div class="container">
+
+
+
+                <div class="well  col-sm-12">
+
+                    <div class="well-heading well-primary">
+                        <h1>Add Location</h1>
+                    </div>
+
+                    <form name="map_form" class="well-body form-horizontal">
+
+
+
+                        <div class="  form-group ">
+                            <label  class="control-label col-sm-3"for="location_name">Location Name*</label>
+                            <div class="col-sm-8">
+                                <input name="l_name"id="location_name" type="text" class="form-control" ng-model="location.locationName" required="required" placeholder="Enter Username"/>
+                            </div>
+
+                            <div ng-show="map_form.$submitted || map_form.l_name.$touched">
+                                <div ng-show="map_form.l_name.$error.required">Please enter location name.</div>
+                            </div>
+                        </div>
+
+                        <div class="  form-group ">
+                            <label  class="control-label col-sm-3">Category*</label>
+                            <div class="col-sm-8">
+                             <select name="l_category" class="form-control" ng-model="location.category"ng-options="x.categoryName for x in categoryList" >
+                                    <option value="">Select Category </option>
+                            </select>
+
+                                <div ng-show="map_form.$submitted || map_form.u_role.$touched">
+                                    <div ng-show="map_form.l_category.$error.required">Please enter Category.</div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="  form-group ">
+                            <label  class="control-label col-sm-3"for="latitude">Latitude*</label>
+                            <div class="col-sm-8">
+                                <input name="l_latitude" id="latitude" type="text" class="form-control" ng-model="latitude" required="required"/>
+                            </div>
+                            <div ng-show="map_form.$submitted || map_form.l_latitude.$touched">
+                                <div ng-show="map_form.l_latitude.$error.required">Please enter password.</div>
+
+                            </div>
+                        </div>
+
+
+                        <div class="  form-group ">
+                            <label  class="control-label col-sm-3"for="longitude">Longitude*</label>
+                            <div class="col-sm-8">
+                                <input name="l_longitude" id="longitude" type="text" class="form-control" ng-model="longitude" required="required"/>
+                            </div>
+                            <div ng-show="map_form.$submitted || map_form.l_longitude.$touched">
+                                <div ng-show="map_form.l_longitude.$error.required">Please enter password.</div>
+
+                            </div>
+                        </div>
+
+
+                        <br/>
+                        <br/>
+
+                        <div class="col-sm-offset-3 col-sm-6">
+                            <button class="btn btn-lg btn-primary " ng-click="addLocation(location)" >
+                                Add User
+                            </button>
+
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+    <div class="view map location" ng-if="show=='view'">
+        <div>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Location Name</th>
+                    <th>Approval Status</th>
+                    <th>Latitude</th>
+                    <th>Longitue</th>
+                    <th>Category</th>
+                    <th style="width:90px"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat ="emp in task.employee">
+                    <td>{{emp.employeeId}}</td>
+                    <td>{{emp.username}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

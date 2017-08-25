@@ -1,0 +1,82 @@
+<div class="add process flow" >
+    <div class="bg-extended">
+        <div class="align-vertical-center">
+
+            <div class="container">
+
+
+
+                <div class="well  col-sm-12">
+
+                    <div class="well-heading well-primary">
+                        <h1>Add User</h1>
+                    </div>
+
+                    <form name="user_form" class="well-body form-horizontal">
+
+
+
+                        <div class="  form-group ">
+                            <label  class="control-label col-sm-3"for="username">Username*</label>
+                            <div class="col-sm-8">
+                                <input name="u_username"id="username" type="text" class="form-control" ng-model="user.username" required="required" placeholder="Enter Username"/>
+                            </div>
+
+                            <div ng-show="user_form.$submitted || user_form.u_username.$touched">
+                                <div ng-show="user_form.u_username.$error.required">Please enter username.</div>
+                            </div>
+                        </div>
+
+                        <div class="  form-group ">
+                            <label  class="control-label col-sm-3"for="password">Password*</label>
+                            <div class="col-sm-8">
+                                <input name="u_password" id="password" type="password" class="form-control" ng-model="user.password" required="required"placeholder="Enter Password"/>
+                            </div>
+                            <div ng-show="user_form.$submitted || user_form.u_password.$touched">
+                                <div ng-show="user_form.u_password.$error.required">Please enter password.</div>
+                            </div>
+                        </div>
+                        <div class="  form-group ">
+                            <label  class="control-label col-sm-3"for="re-enter">Re-Enter Password*</label>
+                            <div class="col-sm-8">
+                                <input name="u_rePassword" id="re-enter" type="text" class="form-control" ng-model="user.rePassword" required="required" confirm-pwd="user.password" placeholder="Re-Enter Username"/>
+                            </div>
+                            <div ng-show="user_form.$submitted || user_form.u_rePassword.$touched">
+                                <div ng-show="user_form.u_rePassword.$error.required">Please enter password.</div>
+                                <div ng-show="user_form.u_rePassword.$error.password">Password Differnt.</div>
+                            </div>
+                        </div>
+                        <div class="  form-group ">
+                            <label  class="control-label col-sm-3">Project*</label>
+                            <div class="col-sm-8">
+                                <select name="u_role" class="form-control" ng-model="user.role"
+                                         ng-options="x for x in roleList" >
+                                    <option value="">Select Role </option>
+                                </select>
+                                <div ng-show="user_form.$submitted || user_form.u_role.$touched">
+                                    <div ng-show="user_form.u_role.$error.required">Please enter password.</div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <br/>
+                        <br/>
+
+                        <div class="col-sm-offset-3 col-sm-6">
+                            <button class="btn btn-lg btn-primary " ng-click="addUser(user)" >
+                                Add User
+                            </button>
+                            <button class="btn btn-lg btn-primary ">
+                                Cancel
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
